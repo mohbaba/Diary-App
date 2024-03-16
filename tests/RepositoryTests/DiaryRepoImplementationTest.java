@@ -14,7 +14,7 @@ public class DiaryRepoImplementationTest {
     @Test
     public void testDiaryCanSave(){
         DiaryRepositoryImplementation diaryRepo = new DiaryRepositoryImplementation();
-        Diary diary = new Diary("abike0");
+        Diary diary = new Diary("abike","password");
         diaryRepo.save(diary);
         assertEquals(1L,diaryRepo.count());
     }
@@ -22,7 +22,7 @@ public class DiaryRepoImplementationTest {
     @Test
     public void testDiaryCanBeSavedAndDeleted(){
         DiaryRepositoryImplementation diaryRepo = new DiaryRepositoryImplementation();
-        Diary diary = new Diary("Bolaji");
+        Diary diary = new Diary("Bolaji","password");
         diaryRepo.save(diary);
         assertEquals(1L,diaryRepo.count());
         diaryRepo.delete(diary);
@@ -32,8 +32,8 @@ public class DiaryRepoImplementationTest {
     @Test
     public void testFindById_ReturnsTheDiaryFound(){
         DiaryRepositoryImplementation diaryRepo = new DiaryRepositoryImplementation();
-        Diary diary = new Diary("Dee");
-        Diary diary1 = new Diary("mohbaba");
+        Diary diary = new Diary("Dee","password");
+        Diary diary1 = new Diary("mohbaba","password");
         diaryRepo.save(diary);
         diaryRepo.save(diary1);
         assertEquals(2L,diaryRepo.count());
@@ -43,7 +43,7 @@ public class DiaryRepoImplementationTest {
     @Test
     public void testThatDiaryCanBeDeletedByUsername(){
         DiaryRepositoryImplementation diaryRepo = new DiaryRepositoryImplementation();
-        Diary diary = new Diary("Abike1");
+        Diary diary = new Diary("Abike1","password");
         diaryRepo.save(diary);
         assertEquals(1L,diaryRepo.count());
         diaryRepo.delete("Abike1");
@@ -53,7 +53,7 @@ public class DiaryRepoImplementationTest {
     @Test
     public void testThatDiaryCanBeDeletedWithDiaryObject(){
         DiaryRepositoryImplementation diaryRepo = new DiaryRepositoryImplementation();
-        Diary diary = new Diary("Abike1");
+        Diary diary = new Diary("Abike1","password");
         diaryRepo.save(diary);
         assertEquals(1L,diaryRepo.count());
         diaryRepo.delete(diary);
@@ -63,9 +63,9 @@ public class DiaryRepoImplementationTest {
     @Test
     public void saveThreeDiaries_DeleteOneDiaryObjectTest(){
         DiaryRepositoryImplementation diaryRepo = new DiaryRepositoryImplementation();
-        Diary diary = new Diary("Abike1");
-        Diary diary1 = new Diary("username1");
-        Diary diary2 = new Diary("username3");
+        Diary diary = new Diary("Abike1","password");
+        Diary diary1 = new Diary("username1","password");
+        Diary diary2 = new Diary("username3","password");
         diaryRepo.save(diary);
         diaryRepo.save(diary1);
         diaryRepo.save(diary2);
@@ -79,9 +79,9 @@ public class DiaryRepoImplementationTest {
     @Test
     public void testFindAll(){
         DiaryRepositoryImplementation diaryRepo = new DiaryRepositoryImplementation();
-        Diary diary = new Diary("Abike1");
-        Diary diary1 = new Diary("username1");
-        Diary diary2 = new Diary("username3");
+        Diary diary = new Diary("Abike1","password");
+        Diary diary1 = new Diary("username1","password");
+        Diary diary2 = new Diary("username3","password");
         diaryRepo.save(diary);
         diaryRepo.save(diary1);
         diaryRepo.save(diary2);

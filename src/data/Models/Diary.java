@@ -8,8 +8,11 @@ public class Diary {
     private String password;
     private final List<Entry> entries = new ArrayList<>();
 
-    public Diary(String username) {
+    public Diary(){}
+
+    public Diary(String username, String password) {
         this.username = username;
+        this.password = password;
     }
 
     public String getUsername() {

@@ -98,6 +98,6 @@ public class EntryRepositoryImplementationTest {
         entryRepository.save(entry2);
 
         assertEquals(3,entryRepository.count());
-
     }
+
 }
