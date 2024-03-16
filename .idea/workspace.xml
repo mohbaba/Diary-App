@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3386996-0be8-4a18-acb3-c48e7ef6fad7" name="Changes" comment="" />
+    <list default="true" id="f3386996-0be8-4a18-acb3-c48e7ef6fad7" name="Changes" comment="Diary created with layered architecture">
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/Repositories/DiaryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/Repositories/DiaryRepositoryImplementation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/Repositories/EntryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/Repositories/EntryRepositoryImplementation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/DiaryRepoImplementationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/EntryRepositoryImplementationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiaryConsoleApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DiaryConsoleApp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Models/Diary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Models/Diary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Models/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Models/Entry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DiaryTest.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,14 +49,88 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "true",
+    "Repository.Attach.JavaDocs": "true",
+    "Repository.Attach.Sources": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "onboarding.tips.debug.path": "C:/Users/DELL/IdeaProjects/DiaryConsoleApp/src/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="JUnit.DiaryRepoImplementationTest.saveThreeDiaries_DeleteOneDiaryObjectTest">
+    <configuration name="DiaryRepoImplementationTest.saveThreeDiaries_DeleteOneDiaryObjectTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DiaryConsoleApp" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DiaryRepoImplementationTest" />
+      <option name="METHOD_NAME" value="saveThreeDiaries_DeleteOneDiaryObjectTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiaryRepoImplementationTest.testFindAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DiaryConsoleApp" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DiaryRepoImplementationTest" />
+      <option name="METHOD_NAME" value="testFindAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EntryRepositoryImplementationTest.saveTwoEntries_deleteOneById_OneEntryLeftTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DiaryConsoleApp" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="EntryRepositoryImplementationTest" />
+      <option name="METHOD_NAME" value="saveTwoEntries_deleteOneById_OneEntryLeftTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EntryRepositoryImplementationTest.saveTwoEntries_deleteOne_OneEntryLeftTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DiaryConsoleApp" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="EntryRepositoryImplementationTest" />
+      <option name="METHOD_NAME" value="saveTwoEntries_deleteOne_OneEntryLeftTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EntryRepositoryImplementationTest.testThatEntryCanBeSaved" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DiaryConsoleApp" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="EntryRepositoryImplementationTest" />
+      <option name="METHOD_NAME" value="testThatEntryCanBeSaved" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.DiaryRepoImplementationTest.saveThreeDiaries_DeleteOneDiaryObjectTest" />
+        <item itemvalue="JUnit.EntryRepositoryImplementationTest.saveTwoEntries_deleteOneById_OneEntryLeftTest" />
+        <item itemvalue="JUnit.EntryRepositoryImplementationTest.testThatEntryCanBeSaved" />
+        <item itemvalue="JUnit.EntryRepositoryImplementationTest.saveTwoEntries_deleteOne_OneEntryLeftTest" />
+        <item itemvalue="JUnit.DiaryRepoImplementationTest.testFindAll" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -40,9 +139,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710375351074</updated>
-      <workItem from="1710375352058" duration="4000" />
+      <workItem from="1710375352058" duration="17215000" />
     </task>
+    <task id="LOCAL-00001" summary="Diary created with layered architecture">
+      <option name="closed" value="true" />
+      <created>1710376212642</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710376212642</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Diary created with layered architecture" />
+    <option name="LAST_COMMIT_MESSAGE" value="Diary created with layered architecture" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
