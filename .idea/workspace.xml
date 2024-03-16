@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3386996-0be8-4a18-acb3-c48e7ef6fad7" name="Changes" comment="registerUser service added with DTO">
-      <change afterPath="$PROJECT_DIR$/src/services/Exceptions/UsernameExistsException.java" afterDir="false" />
+    <list default="true" id="f3386996-0be8-4a18-acb3-c48e7ef6fad7" name="Changes" comment="Handle username verification">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dtos/requests/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dtos/requests/RegisterRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/DiaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/DiaryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/DiaryServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/DiaryServiceImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ServicesTests/DiaryServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ServicesTests/DiaryServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +158,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710375351074</updated>
-      <workItem from="1710375352058" duration="32799000" />
+      <workItem from="1710375352058" duration="34197000" />
     </task>
     <task id="LOCAL-00001" summary="Diary created with layered architecture">
       <option name="closed" value="true" />
@@ -212,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710601205224</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Handle username verification">
+      <option name="closed" value="true" />
+      <created>1710604053292</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1710604053292</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,7 +227,8 @@
     <MESSAGE value="Completed FindEntry Test" />
     <MESSAGE value="Refactored update" />
     <MESSAGE value="registerUser service added with DTO" />
-    <option name="LAST_COMMIT_MESSAGE" value="registerUser service added with DTO" />
+    <MESSAGE value="Handle username verification" />
+    <option name="LAST_COMMIT_MESSAGE" value="Handle username verification" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
