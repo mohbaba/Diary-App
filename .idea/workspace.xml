@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3386996-0be8-4a18-acb3-c48e7ef6fad7" name="Changes" comment="Refactored update">
-      <change afterPath="$PROJECT_DIR$/src/dtos/requests/RegisterRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/DiaryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/DiaryServiceImplementation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/ServicesTests/DiaryServiceTest.java" afterDir="false" />
+    <list default="true" id="f3386996-0be8-4a18-acb3-c48e7ef6fad7" name="Changes" comment="registerUser service added with DTO">
+      <change afterPath="$PROJECT_DIR$/src/services/Exceptions/UsernameExistsException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Models/Diary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Models/Diary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/RepositoryTests/DiaryRepoImplementationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/RepositoryTests/DiaryRepoImplementationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/RepositoryTests/EntryRepositoryImplementationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/RepositoryTests/EntryRepositoryImplementationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dtos/requests/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dtos/requests/RegisterRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/DiaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/DiaryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/DiaryServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/DiaryServiceImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ServicesTests/DiaryServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ServicesTests/DiaryServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,23 +63,8 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.DiaryServiceTest.registerUser_CreatesNewDiaryTest">
-    <configuration name="DiaryRepoImplementationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DiaryConsoleApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="RepositoryTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="RepositoryTests" />
-      <option name="MAIN_CLASS_NAME" value="RepositoryTests.DiaryRepoImplementationTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DiaryServiceTest.registerUser_CreatesNewDiaryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DiaryServiceTest.registerUserWithNameSeparatedBySpace_throwsIllegalArgumentExceptionTest">
+    <configuration name="DiaryServiceTest.registerTwoUsersWithEmptyString_throwsUsernameExistsExceptionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DiaryConsoleApp" />
       <extension name="coverage">
         <pattern>
@@ -91,49 +74,71 @@
       </extension>
       <option name="PACKAGE_NAME" value="ServicesTests" />
       <option name="MAIN_CLASS_NAME" value="ServicesTests.DiaryServiceTest" />
-      <option name="METHOD_NAME" value="registerUser_CreatesNewDiaryTest" />
+      <option name="METHOD_NAME" value="registerTwoUsersWithEmptyString_throwsUsernameExistsExceptionTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EntryRepositoryImplementationTest.saveEntry_updateFirstOneTitle_ItChangesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DiaryConsoleApp" />
-      <option name="PACKAGE_NAME" value="RepositoryTests" />
-      <option name="MAIN_CLASS_NAME" value="RepositoryTests.EntryRepositoryImplementationTest" />
-      <option name="METHOD_NAME" value="saveEntry_updateFirstOneTitle_ItChangesTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EntryRepositoryImplementationTest.saveTwoEntriesFindTheFirstOneById_ReturnsFirstOneTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DiaryServiceTest.registerTwoUsersWithSameUsernameDifferentCases_throwsUsernameExistsExceptionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DiaryConsoleApp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="RepositoryTests.*" />
+          <option name="PATTERN" value="ServicesTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="RepositoryTests" />
-      <option name="MAIN_CLASS_NAME" value="RepositoryTests.EntryRepositoryImplementationTest" />
-      <option name="METHOD_NAME" value="saveTwoEntriesFindTheFirstOneById_ReturnsFirstOneTest" />
+      <option name="PACKAGE_NAME" value="ServicesTests" />
+      <option name="MAIN_CLASS_NAME" value="ServicesTests.DiaryServiceTest" />
+      <option name="METHOD_NAME" value="registerTwoUsersWithSameUsernameDifferentCases_throwsUsernameExistsExceptionTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EntryRepositoryImplementationTest.testFindAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DiaryServiceTest.registerTwoUsersWithSameUsername_throwsUsernameExistsExceptionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DiaryConsoleApp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="RepositoryTests.*" />
+          <option name="PATTERN" value="ServicesTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="RepositoryTests" />
-      <option name="MAIN_CLASS_NAME" value="RepositoryTests.EntryRepositoryImplementationTest" />
-      <option name="METHOD_NAME" value="testFindAll" />
+      <option name="PACKAGE_NAME" value="ServicesTests" />
+      <option name="MAIN_CLASS_NAME" value="ServicesTests.DiaryServiceTest" />
+      <option name="METHOD_NAME" value="registerTwoUsersWithSameUsername_throwsUsernameExistsExceptionTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiaryServiceTest.registerUserWithNameSeparatedBySpace_throwsIllegalArgumentExceptionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DiaryConsoleApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ServicesTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ServicesTests" />
+      <option name="MAIN_CLASS_NAME" value="ServicesTests.DiaryServiceTest" />
+      <option name="METHOD_NAME" value="registerUserWithNameSeparatedBySpace_throwsIllegalArgumentExceptionTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiaryServiceTest.registerUserWithSpace_throwsIllegalArgumentExceptionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DiaryConsoleApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ServicesTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ServicesTests" />
+      <option name="MAIN_CLASS_NAME" value="ServicesTests.DiaryServiceTest" />
+      <option name="METHOD_NAME" value="registerUserWithSpace_throwsIllegalArgumentExceptionTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -141,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DiaryServiceTest.registerUser_CreatesNewDiaryTest" />
-        <item itemvalue="JUnit.DiaryRepoImplementationTest" />
-        <item itemvalue="JUnit.EntryRepositoryImplementationTest.saveEntry_updateFirstOneTitle_ItChangesTest" />
-        <item itemvalue="JUnit.EntryRepositoryImplementationTest.testFindAll" />
-        <item itemvalue="JUnit.EntryRepositoryImplementationTest.saveTwoEntriesFindTheFirstOneById_ReturnsFirstOneTest" />
+        <item itemvalue="JUnit.DiaryServiceTest.registerUserWithNameSeparatedBySpace_throwsIllegalArgumentExceptionTest" />
+        <item itemvalue="JUnit.DiaryServiceTest.registerUserWithSpace_throwsIllegalArgumentExceptionTest" />
+        <item itemvalue="JUnit.DiaryServiceTest.registerTwoUsersWithEmptyString_throwsUsernameExistsExceptionTest" />
+        <item itemvalue="JUnit.DiaryServiceTest.registerTwoUsersWithSameUsernameDifferentCases_throwsUsernameExistsExceptionTest" />
+        <item itemvalue="JUnit.DiaryServiceTest.registerTwoUsersWithSameUsername_throwsUsernameExistsExceptionTest" />
       </list>
     </recent_temporary>
   </component>
@@ -157,7 +162,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710375351074</updated>
-      <workItem from="1710375352058" duration="30277000" />
+      <workItem from="1710375352058" duration="32799000" />
     </task>
     <task id="LOCAL-00001" summary="Diary created with layered architecture">
       <option name="closed" value="true" />
@@ -199,7 +204,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710594344334</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="registerUser service added with DTO">
+      <option name="closed" value="true" />
+      <created>1710601205224</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710601205224</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,7 +222,8 @@
     <MESSAGE value="Diary created with layered architecture" />
     <MESSAGE value="Completed FindEntry Test" />
     <MESSAGE value="Refactored update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored update" />
+    <MESSAGE value="registerUser service added with DTO" />
+    <option name="LAST_COMMIT_MESSAGE" value="registerUser service added with DTO" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
