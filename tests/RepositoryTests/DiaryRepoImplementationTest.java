@@ -88,4 +88,6 @@ public class DiaryRepoImplementationTest {
         assertEquals(Arrays.toString(new String[]{"Abike1", "username1", "username3"}),diaryRepo.findAll().toString());
     }
 
+
+
 }

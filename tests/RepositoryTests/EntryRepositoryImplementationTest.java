@@ -33,20 +33,18 @@ public class EntryRepositoryImplementationTest {
     @Test
     public void saveEntry_updateFirstOneTitle_ItChangesTest(){
         EntryRepositoryImplementation entryRepository = new EntryRepositoryImplementation();
-        Entry entry = new Entry();
-
-        entry.setId(entry.getId());
-        entry.setTitle("Title");
-        entry.setBody("Body");
+        Entry entry = new Entry("Title","Body");
         entryRepository.save(entry);
         assertEquals(1,entryRepository.count());
 
-        entry.setId(1);
-        entry.setTitle("New Title");
-        entry.setBody("New Body");
-        entryRepository.save(entry);
+
+        Entry updateEntry = new Entry();
+        updateEntry.setId(1);
+        updateEntry.setTitle("New Title");
+        updateEntry.setBody("New Body");
+        entryRepository.save(updateEntry);
         assertEquals(1,entryRepository.count());
-        assertEquals("New Title",entry.getTitle());
+        assertEquals("New Title",entryRepository.findAll().getFirst().getTitle());
     }
 
     @Test
@@ -73,5 +71,33 @@ public class EntryRepositoryImplementationTest {
         assertEquals(2,entryRepository.count());
 
         assertSame(entry,entryRepository.findById(entry.getId()));
+    }
+
+    @Test
+    public void testFindAll(){
+        EntryRepositoryImplementation entryRepository = new EntryRepositoryImplementation();
+        Entry entry = new Entry("Hello","How far");
+        entryRepository.save(entry);
+        Entry entry1 = new Entry("How Far","Its good");
+        entryRepository.save(entry1);
+        Entry entry2 = new Entry("Title 2","Body 2");
+        entryRepository.save(entry2);
+
+        assertEquals(3,entryRepository.count());
+
+    }
+
+    @Test
+    public void saveThreeEntriesUpdateThirdEntry_(){
+        EntryRepositoryImplementation entryRepository = new EntryRepositoryImplementation();
+        Entry entry = new Entry("Hello","How far");
+        entryRepository.save(entry);
+        Entry entry1 = new Entry("How Far","Its good");
+        entryRepository.save(entry1);
+        Entry entry2 = new Entry("Title 2","Body 2");
+        entryRepository.save(entry2);
+
+        assertEquals(3,entryRepository.count());
+
     }
 }

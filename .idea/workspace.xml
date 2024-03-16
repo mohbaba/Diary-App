@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3386996-0be8-4a18-acb3-c48e7ef6fad7" name="Changes" comment="Diary created with layered architecture">
-      <change afterPath="$PROJECT_DIR$/tests/RepositoryTests/EntryRepositoryImplementationTest.java" afterDir="false" />
+    <list default="true" id="f3386996-0be8-4a18-acb3-c48e7ef6fad7" name="Changes" comment="Completed FindEntry Test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Models/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Models/Entry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Repositories/EntryRepositoryImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Repositories/EntryRepositoryImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/DiaryRepoImplementationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/RepositoryTests/DiaryRepoImplementationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/EntryRepositoryImplementationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/RepositoryTests/DiaryRepoImplementationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/RepositoryTests/DiaryRepoImplementationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/RepositoryTests/EntryRepositoryImplementationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/RepositoryTests/EntryRepositoryImplementationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,17 +60,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.EntryRepositoryImplementationTest.saveTwoEntriesFindTheFirstOneById_ReturnsFirstOneTest">
-    <configuration name="DiaryRepoImplementationTest.saveThreeDiaries_DeleteOneDiaryObjectTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DiaryConsoleApp" />
-      <option name="PACKAGE_NAME" value="RepositoryTests" />
-      <option name="MAIN_CLASS_NAME" value="RepositoryTests.DiaryRepoImplementationTest" />
-      <option name="METHOD_NAME" value="saveThreeDiaries_DeleteOneDiaryObjectTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.EntryRepositoryImplementationTest.saveEntry_updateFirstOneTitle_ItChangesTest">
     <configuration name="EntryRepositoryImplementationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DiaryConsoleApp" />
       <extension name="coverage">
@@ -125,13 +112,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EntryRepositoryImplementationTest.testFindAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DiaryConsoleApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="RepositoryTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="RepositoryTests" />
+      <option name="MAIN_CLASS_NAME" value="RepositoryTests.EntryRepositoryImplementationTest" />
+      <option name="METHOD_NAME" value="testFindAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.EntryRepositoryImplementationTest.saveTwoEntriesFindTheFirstOneById_ReturnsFirstOneTest" />
         <item itemvalue="JUnit.EntryRepositoryImplementationTest.saveEntry_updateFirstOneTitle_ItChangesTest" />
+        <item itemvalue="JUnit.EntryRepositoryImplementationTest.testFindAll" />
+        <item itemvalue="JUnit.EntryRepositoryImplementationTest.saveTwoEntriesFindTheFirstOneById_ReturnsFirstOneTest" />
         <item itemvalue="JUnit.EntryRepositoryImplementationTest" />
         <item itemvalue="JUnit.EntryRepositoryImplementationTest.saveTwoEntries_DeleteOneEntryObjectRemainsTwoTest" />
-        <item itemvalue="JUnit.DiaryRepoImplementationTest.saveThreeDiaries_DeleteOneDiaryObjectTest" />
       </list>
     </recent_temporary>
   </component>
@@ -143,7 +146,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710375351074</updated>
-      <workItem from="1710375352058" duration="24117000" />
+      <workItem from="1710375352058" duration="25360000" />
     </task>
     <task id="LOCAL-00001" summary="Diary created with layered architecture">
       <option name="closed" value="true" />
@@ -161,7 +164,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710584978611</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Completed FindEntry Test">
+      <option name="closed" value="true" />
+      <created>1710593139975</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710593139975</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Completed FindEntry Test">
+      <option name="closed" value="true" />
+      <created>1710593193456</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1710593193456</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,7 +188,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Diary created with layered architecture" />
-    <option name="LAST_COMMIT_MESSAGE" value="Diary created with layered architecture" />
+    <MESSAGE value="Completed FindEntry Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed FindEntry Test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

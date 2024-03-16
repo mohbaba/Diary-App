@@ -39,7 +39,7 @@ public class EntryRepositoryImplementation implements EntryRepository{
     }
     @Override
     public List<Entry> findAll() {
-        return null;
+        return entries;
     }
 
     @Override
