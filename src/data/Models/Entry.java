@@ -6,13 +6,17 @@ public class Entry {
     private int id;
     private String title;
     private String body;
-    private final LocalDate creationDate = LocalDate.now();
+    private LocalDate creationDate = LocalDate.now();
     private String author;
 
-    public Entry(String title, String body){
+    public Entry( String title, String body){
+//        this.id = id;
         this.title = title;
         this.body = body;
+        this.creationDate = LocalDate.now();
     }
+
+    public Entry(){}
 
     public void setId(int id) {
         this.id = id;

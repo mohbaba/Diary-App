@@ -10,11 +10,33 @@ public class EntryRepositoryImplementation implements EntryRepository{
     private int numberOfEntries;
     @Override
     public Entry save(Entry entry) {
-        entry.setId(generateId());
-        entries.add(entry);
-        return entry;
+        if (isNew(entry)){
+            add(entry);
+            return entry;
+        }
+        update(entry);
+        return null;
     }
 
+    private boolean isNew(Entry entry){
+        return entry.getId() == 0;
+    }
+
+    private void add(Entry entry){
+        entry.setId(generateId());
+        entries.add(entry);
+    }
+
+    private void update(Entry entry){
+        for (Entry findEntry : entries) {
+            if (findEntry.getId() == entry.getId()){
+                delete(findEntry);
+                entries.add(entry);
+            }
+        }
+
+
+    }
     @Override
     public List<Entry> findAll() {
         return null;
@@ -22,6 +44,9 @@ public class EntryRepositoryImplementation implements EntryRepository{
 
     @Override
     public Entry findById(int id) {
+        for (Entry findEntry : entries) {
+            if (findEntry.getId() == id)return findEntry;
+        }
         return null;
     }
 
@@ -41,11 +66,11 @@ public class EntryRepositoryImplementation implements EntryRepository{
     }
 
     private int generateId(){
-        ++numberOfEntries;
+        return ++numberOfEntries;
     }
 
     @Override
     public void delete(Entry entry) {
-
+        entries.remove(entry);
     }
 }
