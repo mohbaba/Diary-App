@@ -4,24 +4,34 @@ import data.Repositories.DiaryRepository;
 import data.Repositories.DiaryRepositoryImplementation;
 import dtos.requests.LoginRequest;
 import dtos.requests.RegisterRequest;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import services.DiaryService;
 import services.DiaryServiceImplementation;
+import services.Exceptions.AccountNotFoundException;
+import services.Exceptions.IncorrectPasswordException;
 import services.Exceptions.UsernameExistsException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class DiaryServiceTest {
     private DiaryRepository diaryRepository;
+    private DiaryService diaryService;
 
     @BeforeEach
     public void setup(){
         diaryRepository = new DiaryRepositoryImplementation();
+        diaryService = new DiaryServiceImplementation(diaryRepository);
+
+    }
+
+    @AfterEach
+    public void tearDown(){
+
     }
     @Test
     public void registerUser_CreatesNewDiaryTest(){
-        DiaryService diaryService = new DiaryServiceImplementation(diaryRepository);
         RegisterRequest request = new RegisterRequest();
         request.setUsername("User");
         request.setPassword("password");
@@ -32,7 +42,6 @@ public class DiaryServiceTest {
 
     @Test
     public void registerTwoUsersWithSameUsername_throwsUsernameExistsExceptionTest() {
-        DiaryService diaryService = new DiaryServiceImplementation(diaryRepository);
         RegisterRequest request = new RegisterRequest();
         RegisterRequest request1 = new RegisterRequest();
         request.setUsername("User");
@@ -46,7 +55,6 @@ public class DiaryServiceTest {
 
     @Test
     public void registerTwoUsersWithSameUsernameDifferentCases_throwsUsernameExistsExceptionTest() {
-        DiaryService diaryService = new DiaryServiceImplementation(diaryRepository);
         RegisterRequest request = new RegisterRequest();
         RegisterRequest request1 = new RegisterRequest();
         request.setUsername("User");
@@ -60,7 +68,6 @@ public class DiaryServiceTest {
 
     @Test
     public void registerUserWithEmptyString_throwsUsernameExistsExceptionTest() {
-        DiaryService diaryService = new DiaryServiceImplementation(diaryRepository);
         RegisterRequest request1 = new RegisterRequest();
 
         request1.setUsername("");
@@ -70,7 +77,6 @@ public class DiaryServiceTest {
 
     @Test
     public void registerUserWithSpace_throwsIllegalArgumentExceptionTest() {
-        DiaryService diaryService = new DiaryServiceImplementation(diaryRepository);
         RegisterRequest request1 = new RegisterRequest();
 
         request1.setUsername("  ");
@@ -80,7 +86,6 @@ public class DiaryServiceTest {
 
     @Test
     public void registerUserWithNameSeparatedBySpace_throwsIllegalArgumentExceptionTest() {
-        DiaryService diaryService = new DiaryServiceImplementation(diaryRepository);
         RegisterRequest request1 = new RegisterRequest();
 
         request1.setUsername("User Name");
@@ -90,7 +95,6 @@ public class DiaryServiceTest {
 
     @Test
     public void registerTwoUsersLogSecondUserIn_SecondUserIsLoggedInTest() {
-        DiaryService diaryService = new DiaryServiceImplementation(diaryRepository);
         RegisterRequest request = new RegisterRequest();
 
         request.setUsername("Username");
@@ -107,6 +111,49 @@ public class DiaryServiceTest {
         user.setPassword("pass");
         assertTrue(diaryService.login(user));
 
+    }
+
+    @Test
+    public void registerTwoUsersLogSecondUserInWithCaseSensitiveUsername_SecondUserIsLoggedInTest() {
+        RegisterRequest request = new RegisterRequest();
+
+        request.setUsername("Username");
+        request.setPassword("pass");
+        diaryService.registerUser(request);
+
+        RegisterRequest request1 = new RegisterRequest();
+        request1.setUsername("USername2");
+        request1.setPassword("pass");
+        diaryService.registerUser(request1);
+
+        LoginRequest user = new LoginRequest();
+        user.setUsername("uSername2");
+        user.setPassword("pass");
+        assertTrue(diaryService.login(user));
 
     }
+
+    @Test
+    public void loginUserWithIncorrectPassword_ThrowsExceptionTest() {
+        RegisterRequest request = new RegisterRequest();
+
+        request.setUsername("Username");
+        request.setPassword("pass");
+        diaryService.registerUser(request);
+
+        LoginRequest login = new LoginRequest();
+        login.setUsername("username");
+        login.setPassword("Pass");
+        assertThrows(IncorrectPasswordException.class,()->diaryService.login(login));
+
+    }
+    @Test
+    public void loginUserWithNonExistingUsername_ThrowsExceptionTest(){
+        LoginRequest login = new LoginRequest();
+        login.setUsername("username");
+        login.setPassword("Pass");
+        assertThrows(AccountNotFoundException.class,()->diaryService.login(login));
+    }
+
+
 }

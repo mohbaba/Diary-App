@@ -9,7 +9,6 @@ import services.Exceptions.IncorrectPasswordException;
 import services.Exceptions.UsernameExistsException;
 
 public class DiaryServiceImplementation implements DiaryService{
-//    private final DiaryRepository diaryRepository = new DiaryRepositoryImplementation();
     private DiaryRepository diaryRepository;
 
     public DiaryServiceImplementation(DiaryRepository diaryRepository){
@@ -38,17 +37,19 @@ public class DiaryServiceImplementation implements DiaryService{
 
     @Override
     public boolean login(LoginRequest login) {
-
-        return false;
+        return validateAccount(login);
     }
 
-    private void validate(LoginRequest loginRequest){
-        String username = loginRequest.getUsername();
-        String password = loginRequest.getPassword();
-        var diary = diaryRepository.findById(username);
+    private boolean validateAccount(LoginRequest loginRequest){
+        var diary = diaryRepository.findById(loginRequest.getUsername());
         if (diary == null)throw new AccountNotFoundException("Account does not exist, please " +
                 "register");
-        if (!diary.getPassword().equals(password))throw new IncorrectPasswordException("The " +
+        return validatePassword(diary,loginRequest);
+    }
+
+    private boolean validatePassword(Diary diary, LoginRequest loginRequest){
+        if (diary.getPassword().equals(loginRequest.getPassword()))return true;
+        throw new IncorrectPasswordException("The " +
                 "password you entered is incorrect");
     }
 

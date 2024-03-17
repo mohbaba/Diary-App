@@ -22,6 +22,10 @@ public class Diary {
         return this.password;
     }
 
+    public List<Entry> getEntries() {
+        return entries;
+    }
+
     public String toString(){
         return String.format("%s",this.username);
     }
