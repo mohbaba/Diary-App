@@ -18,6 +18,9 @@ public class Diary {
     public String getUsername() {
         return this.username;
     }
+    public String getPassword(){
+        return this.password;
+    }
 
     public String toString(){
         return String.format("%s",this.username);

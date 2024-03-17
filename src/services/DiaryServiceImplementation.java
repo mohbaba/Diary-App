@@ -2,16 +2,23 @@ package services;
 
 import data.Models.Diary;
 import data.Repositories.DiaryRepository;
-import data.Repositories.DiaryRepositoryImplementation;
+import dtos.requests.LoginRequest;
 import dtos.requests.RegisterRequest;
+import services.Exceptions.AccountNotFoundException;
+import services.Exceptions.IncorrectPasswordException;
 import services.Exceptions.UsernameExistsException;
 
 public class DiaryServiceImplementation implements DiaryService{
-    private final DiaryRepository diaryRepository = new DiaryRepositoryImplementation();
+//    private final DiaryRepository diaryRepository = new DiaryRepositoryImplementation();
+    private DiaryRepository diaryRepository;
+
+    public DiaryServiceImplementation(DiaryRepository diaryRepository){
+        this.diaryRepository = diaryRepository;
+    }
     @Override
     public void registerUser(RegisterRequest registerRequest) {
         validate(registerRequest.getUsername());
-        Diary diary = new Diary(registerRequest.getUsername(),registerRequest.getPassword());
+        var diary = new Diary(registerRequest.getUsername(),registerRequest.getPassword());
         diaryRepository.save(diary);
     }
 
@@ -30,8 +37,19 @@ public class DiaryServiceImplementation implements DiaryService{
     }
 
     @Override
-    public void login(String username, String password) {
+    public boolean login(LoginRequest login) {
 
+        return false;
+    }
+
+    private void validate(LoginRequest loginRequest){
+        String username = loginRequest.getUsername();
+        String password = loginRequest.getPassword();
+        var diary = diaryRepository.findById(username);
+        if (diary == null)throw new AccountNotFoundException("Account does not exist, please " +
+                "register");
+        if (!diary.getPassword().equals(password))throw new IncorrectPasswordException("The " +
+                "password you entered is incorrect");
     }
 
     @Override
