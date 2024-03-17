@@ -9,7 +9,7 @@ import services.Exceptions.IncorrectPasswordException;
 import services.Exceptions.UsernameExistsException;
 
 public class DiaryServiceImplementation implements DiaryService{
-    private DiaryRepository diaryRepository;
+    private final DiaryRepository diaryRepository;
 
     public DiaryServiceImplementation(DiaryRepository diaryRepository){
         this.diaryRepository = diaryRepository;
