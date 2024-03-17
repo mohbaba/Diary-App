@@ -16,12 +16,11 @@ import services.Exceptions.UsernameExistsException;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class DiaryServiceTest {
-    private DiaryRepository diaryRepository;
     private DiaryService diaryService;
 
     @BeforeEach
     public void setup(){
-        diaryRepository = new DiaryRepositoryImplementation();
+        DiaryRepository diaryRepository = new DiaryRepositoryImplementation();
         diaryService = new DiaryServiceImplementation(diaryRepository);
 
     }
