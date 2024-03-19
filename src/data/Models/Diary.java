@@ -1,7 +1,5 @@
 package data.Models;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Diary {
     private String username;

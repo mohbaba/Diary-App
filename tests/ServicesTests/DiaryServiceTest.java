@@ -4,7 +4,6 @@ import data.Repositories.DiaryRepository;
 import data.Repositories.DiaryRepositoryImplementation;
 import dtos.requests.LoginRequest;
 import dtos.requests.RegisterRequest;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import services.DiaryService;
