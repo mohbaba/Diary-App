@@ -6,10 +6,12 @@ import dtos.requests.LoginRequest;
 import dtos.requests.RegisterRequest;
 import services.Exceptions.AccountNotFoundException;
 import services.Exceptions.IncorrectPasswordException;
+import services.Exceptions.LoginRequiredException;
 import services.Exceptions.UsernameExistsException;
 
 public class DiaryServiceImplementation implements DiaryService{
     private final DiaryRepository diaryRepository;
+    private boolean isLoggedIn;
 
     public DiaryServiceImplementation(DiaryRepository diaryRepository){
         this.diaryRepository = diaryRepository;
@@ -18,6 +20,7 @@ public class DiaryServiceImplementation implements DiaryService{
     public void registerUser(RegisterRequest registerRequest) {
         validate(registerRequest.getUsername());
         var diary = new Diary(registerRequest.getUsername(),registerRequest.getPassword());
+        isLoggedIn = true;
         diaryRepository.save(diary);
     }
 
@@ -37,6 +40,7 @@ public class DiaryServiceImplementation implements DiaryService{
 
     @Override
     public boolean login(LoginRequest login) {
+
         return validateAccount(login);
     }
 
@@ -48,13 +52,36 @@ public class DiaryServiceImplementation implements DiaryService{
     }
 
     private boolean validatePassword(Diary diary, LoginRequest loginRequest){
-        if (diary.getPassword().equals(loginRequest.getPassword()))return true;
-        throw new IncorrectPasswordException("The " +
-                "password you entered is incorrect");
+        if (diary.getPassword().equals(loginRequest.getPassword())){
+            diary.setLocked(false);
+            isLoggedIn = true;
+            return true;
+        }
+        throw new IncorrectPasswordException("The password you entered is incorrect");
+    }
+
+    public boolean isLoggedIn(){
+        return isLoggedIn;
     }
 
     @Override
     public long getNumberOfUsers() {
         return diaryRepository.count();
+    }
+
+    @Override
+    public Diary getUserDiary(String username) {
+        if (!isLoggedIn)throw new LoginRequiredException("User is currently logged out");
+        return diaryRepository.findById(username);
+
+    }
+
+    @Override
+    public void logout(String username) {
+        var diary = diaryRepository.findById(username);
+        diary.setLocked(true);
+        isLoggedIn = false;
+
+
     }
 }

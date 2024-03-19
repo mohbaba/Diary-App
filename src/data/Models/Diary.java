@@ -6,7 +6,15 @@ import java.util.List;
 public class Diary {
     private String username;
     private String password;
-    private final List<Entry> entries = new ArrayList<>();
+    private boolean isLocked;
+
+    public boolean isLocked() {
+        return isLocked;
+    }
+
+    public void setLocked(boolean locked) {
+        isLocked = locked;
+    }
 
     public Diary(){}
 
@@ -22,9 +30,6 @@ public class Diary {
         return this.password;
     }
 
-    public List<Entry> getEntries() {
-        return entries;
-    }
 
     public String toString(){
         return String.format("%s",this.username);

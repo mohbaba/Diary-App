@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3386996-0be8-4a18-acb3-c48e7ef6fad7" name="Changes" comment="Created Exceptions">
+    <list default="true" id="f3386996-0be8-4a18-acb3-c48e7ef6fad7" name="Changes" comment="Added and tested login functionality">
+      <change afterPath="$PROJECT_DIR$/src/services/Exceptions/LoginRequiredException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiaryConsoleApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DiaryConsoleApp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/Models/Diary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Models/Diary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dtos/requests/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dtos/requests/LoginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/DiaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/DiaryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/DiaryServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/DiaryServiceImplementation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/ServicesTests/DiaryServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ServicesTests/DiaryServiceTest.java" afterDir="false" />
     </list>
@@ -63,7 +63,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.DiaryServiceTest">
+  <component name="RunManager" selected="JUnit.DiaryServiceTest.logUserInGetUserDiary_ReturnsTheUserDiaryTest">
     <configuration name="DiaryServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DiaryConsoleApp" />
       <extension name="coverage">
@@ -75,6 +75,54 @@
       <option name="PACKAGE_NAME" value="ServicesTests" />
       <option name="MAIN_CLASS_NAME" value="ServicesTests.DiaryServiceTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiaryServiceTest.getUserDiaryWithoutLoggingIn_ThrowsExceptionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DiaryConsoleApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ServicesTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ServicesTests" />
+      <option name="MAIN_CLASS_NAME" value="ServicesTests.DiaryServiceTest" />
+      <option name="METHOD_NAME" value="getUserDiaryWithoutLoggingIn_ThrowsExceptionTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiaryServiceTest.logUserInGetUserDiary_ReturnsTheUserDiaryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DiaryConsoleApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ServicesTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ServicesTests" />
+      <option name="MAIN_CLASS_NAME" value="ServicesTests.DiaryServiceTest" />
+      <option name="METHOD_NAME" value="logUserInGetUserDiary_ReturnsTheUserDiaryTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiaryServiceTest.logUserInUserISLoggedIn_LogoutUserIsLoggedOutTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DiaryConsoleApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ServicesTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ServicesTests" />
+      <option name="MAIN_CLASS_NAME" value="ServicesTests.DiaryServiceTest" />
+      <option name="METHOD_NAME" value="logUserInUserISLoggedIn_LogoutUserIsLoggedOutTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -95,61 +143,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiaryServiceTest.registerTwoUsersLogSecondUserInWithCaseSensitiveUsername_SecondUserIsLoggedInTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DiaryConsoleApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ServicesTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ServicesTests" />
-      <option name="MAIN_CLASS_NAME" value="ServicesTests.DiaryServiceTest" />
-      <option name="METHOD_NAME" value="registerTwoUsersLogSecondUserInWithCaseSensitiveUsername_SecondUserIsLoggedInTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DiaryServiceTest.registerTwoUsersLogSecondUserIn_SecondUserIsLoggedInTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DiaryConsoleApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ServicesTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ServicesTests" />
-      <option name="MAIN_CLASS_NAME" value="ServicesTests.DiaryServiceTest" />
-      <option name="METHOD_NAME" value="registerTwoUsersLogSecondUserIn_SecondUserIsLoggedInTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DiaryServiceTest.registerUserWithNameSeparatedBySpace_throwsIllegalArgumentExceptionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DiaryConsoleApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ServicesTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ServicesTests" />
-      <option name="MAIN_CLASS_NAME" value="ServicesTests.DiaryServiceTest" />
-      <option name="METHOD_NAME" value="registerUserWithNameSeparatedBySpace_throwsIllegalArgumentExceptionTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DiaryServiceTest.logUserInGetUserDiary_ReturnsTheUserDiaryTest" />
+        <item itemvalue="JUnit.DiaryServiceTest.logUserInUserISLoggedIn_LogoutUserIsLoggedOutTest" />
+        <item itemvalue="JUnit.DiaryServiceTest.getUserDiaryWithoutLoggingIn_ThrowsExceptionTest" />
         <item itemvalue="JUnit.DiaryServiceTest" />
         <item itemvalue="JUnit.DiaryServiceTest.loginUserWithIncorrectPassword_ThrowsExceptionTest" />
-        <item itemvalue="JUnit.DiaryServiceTest.registerTwoUsersLogSecondUserInWithCaseSensitiveUsername_SecondUserIsLoggedInTest" />
-        <item itemvalue="JUnit.DiaryServiceTest.registerTwoUsersLogSecondUserIn_SecondUserIsLoggedInTest" />
-        <item itemvalue="JUnit.DiaryServiceTest.registerUserWithNameSeparatedBySpace_throwsIllegalArgumentExceptionTest" />
       </list>
     </recent_temporary>
   </component>
@@ -162,7 +162,7 @@
       <option name="presentableId" value="Default" />
       <updated>1710375351074</updated>
       <workItem from="1710375352058" duration="38783000" />
-      <workItem from="1710640313515" duration="3883000" />
+      <workItem from="1710640313515" duration="15072000" />
     </task>
     <task id="LOCAL-00001" summary="Diary created with layered architecture">
       <option name="closed" value="true" />
@@ -236,7 +236,31 @@
       <option name="project" value="LOCAL" />
       <updated>1710642239525</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added and tested login functionality">
+      <option name="closed" value="true" />
+      <created>1710644518015</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1710644518015</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added and tested login functionality">
+      <option name="closed" value="true" />
+      <created>1710645133399</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1710645133399</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added and tested login functionality">
+      <option name="closed" value="true" />
+      <created>1710645207861</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1710645207861</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,7 +273,8 @@
     <MESSAGE value="registerUser service added with DTO" />
     <MESSAGE value="Handle username verification" />
     <MESSAGE value="Created Exceptions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Exceptions" />
+    <MESSAGE value="Added and tested login functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added and tested login functionality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

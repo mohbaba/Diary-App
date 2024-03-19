@@ -11,6 +11,7 @@ import services.DiaryService;
 import services.DiaryServiceImplementation;
 import services.Exceptions.AccountNotFoundException;
 import services.Exceptions.IncorrectPasswordException;
+import services.Exceptions.LoginRequiredException;
 import services.Exceptions.UsernameExistsException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -25,10 +26,6 @@ public class DiaryServiceTest {
 
     }
 
-    @AfterEach
-    public void tearDown(){
-
-    }
     @Test
     public void registerUser_CreatesNewDiaryTest(){
         RegisterRequest request = new RegisterRequest();
@@ -152,6 +149,56 @@ public class DiaryServiceTest {
         login.setUsername("username");
         login.setPassword("Pass");
         assertThrows(AccountNotFoundException.class,()->diaryService.login(login));
+    }
+
+    @Test
+    public void getUserDiaryWithoutLoggingIn_ThrowsExceptionTest(){
+        RegisterRequest request = new RegisterRequest();
+
+        request.setUsername("Username");
+        request.setPassword("pass");
+        diaryService.registerUser(request);
+
+        LoginRequest login = new LoginRequest();
+        login.setUsername("username");
+        login.setPassword("Pass");
+
+        diaryService.logout("username");
+        assertThrows(LoginRequiredException.class, ()->diaryService.getUserDiary("username"));
+    }
+
+    @Test
+    public void logUserInUserISLoggedIn_LogoutUserIsLoggedOutTest(){
+        RegisterRequest request = new RegisterRequest();
+
+        request.setUsername("Username");
+        request.setPassword("pass");
+        diaryService.registerUser(request);
+
+        LoginRequest login = new LoginRequest();
+        login.setUsername("username");
+        login.setPassword("Pass");
+
+        diaryService.logout("username");
+        assertFalse(diaryService.isLoggedIn());
+
+    }
+
+    @Test
+    public void logUserInGetUserDiary_ReturnsTheUserDiaryTest(){
+        RegisterRequest request = new RegisterRequest();
+
+        request.setUsername("Username");
+        request.setPassword("pass");
+        diaryService.registerUser(request);
+
+        LoginRequest login = new LoginRequest();
+        login.setUsername("username");
+        login.setPassword("Pass");
+
+        assertNotNull(diaryService.getUserDiary(request.getUsername()));
+        assertEquals("username",diaryService.getUserDiary(request.getUsername()).getUsername());
+        assertNotEquals("Username",diaryService.getUserDiary(request.getUsername()).getUsername());
     }
 
 
