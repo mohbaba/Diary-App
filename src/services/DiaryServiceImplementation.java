@@ -1,13 +1,17 @@
 package services;
 
 import data.Models.Diary;
+import data.Models.Entry;
 import data.Repositories.DiaryRepository;
+import dtos.requests.EntryRequest;
 import dtos.requests.LoginRequest;
 import dtos.requests.RegisterRequest;
 import services.Exceptions.AccountNotFoundException;
 import services.Exceptions.IncorrectPasswordException;
 import services.Exceptions.LoginRequiredException;
 import services.Exceptions.UsernameExistsException;
+
+import java.util.ArrayList;
 
 public class DiaryServiceImplementation implements DiaryService{
     private final DiaryRepository diaryRepository;
@@ -62,6 +66,16 @@ public class DiaryServiceImplementation implements DiaryService{
 
     public boolean isLoggedIn(){
         return isLoggedIn;
+    }
+
+    @Override
+    public void createEntry(EntryRequest entryRequest) {
+
+    }
+
+    @Override
+    public ArrayList<Entry> getEntriesFor(String username) {
+        return null;
     }
 
     @Override

@@ -51,8 +51,12 @@ public class EntryRepositoryImplementation implements EntryRepository{
     }
 
     @Override
-    public Entry findByAuthor(String author) {
-        return null;
+    public List<Entry> findByAuthor(String author) {
+        List<Entry> authorEntries = new ArrayList<>();
+        for (Entry entry : entries) {
+            if (entry.getAuthor().equals(author))authorEntries.add(entry);
+        }
+        return authorEntries;
     }
 
     @Override

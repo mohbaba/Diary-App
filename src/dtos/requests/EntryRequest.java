@@ -1,12 +1,8 @@
-package data.Models;
+package dtos.requests;
 
-import java.time.LocalDate;
-
-public class Entry {
-    private int id;
+public class EntryRequest {
     private String title;
     private String body;
-    private LocalDate creationDate = LocalDate.now();
     private String author;
 
     public String getAuthor() {
@@ -15,19 +11,6 @@ public class Entry {
 
     public void setAuthor(String author) {
         this.author = author;
-    }
-
-    public Entry(String title, String body){
-//        this.id = id;
-        this.title = title;
-        this.body = body;
-        this.creationDate = LocalDate.now();
-    }
-
-    public Entry(){}
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getTitle() {
@@ -44,9 +27,5 @@ public class Entry {
 
     public void setBody(String body) {
         this.body = body;
-    }
-
-    public int getId() {
-        return this.id;
     }
 }

@@ -2,6 +2,7 @@ package ServicesTests;
 
 import data.Repositories.DiaryRepository;
 import data.Repositories.DiaryRepositoryImplementation;
+import dtos.requests.EntryRequest;
 import dtos.requests.LoginRequest;
 import dtos.requests.RegisterRequest;
 import org.junit.jupiter.api.BeforeEach;
@@ -167,7 +168,7 @@ public class DiaryServiceTest {
     }
 
     @Test
-    public void logUserInUserISLoggedIn_LogoutUserIsLoggedOutTest(){
+    public void logUserInUserISLoggedIn_Logout_UserIsLoggedOutTest(){
         RegisterRequest request = new RegisterRequest();
 
         request.setUsername("Username");
@@ -198,6 +199,27 @@ public class DiaryServiceTest {
         assertNotNull(diaryService.getUserDiary(request.getUsername()));
         assertEquals("username",diaryService.getUserDiary(request.getUsername()).getUsername());
         assertNotEquals("Username",diaryService.getUserDiary(request.getUsername()).getUsername());
+    }
+
+    @Test
+    public void createEntryAndSave_EntryIsCreatedTest(){
+        RegisterRequest request = new RegisterRequest();
+
+        request.setUsername("Username");
+        request.setPassword("pass");
+        diaryService.registerUser(request);
+
+        LoginRequest login = new LoginRequest();
+        login.setPassword("Pass");
+        login.setUsername("username");
+        EntryRequest entryRequest = new EntryRequest();
+        entryRequest.setTitle("Title");
+        entryRequest.setBody("Body");
+        diaryService.createEntry(entryRequest);
+        assertEquals(1,diaryService.getEntriesFor("username").size());
+        assertEquals("Title",diaryService.getEntriesFor("username").getFirst().getTitle());
+
+
     }
 
 
