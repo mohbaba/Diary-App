@@ -3,6 +3,7 @@ package controllers;
 import data.Repositories.DiaryRepository;
 import data.Repositories.DiaryRepositoryImplementation;
 import dtos.requests.EntryRequest;
+import dtos.requests.LoginRequest;
 import dtos.requests.RegisterRequest;
 import services.DiaryService;
 import services.DiaryServiceImplementation;
@@ -81,6 +82,33 @@ public class DiaryController {
             return String.format("%s deleted successfully",username);
         }catch (DiaryAppException e){
             return  e.getMessage();
+        }
+    }
+
+    public String login(LoginRequest loginRequest){
+        try {
+            diaryService.login(loginRequest);
+            return String.format("%s successfully logged in",loginRequest.getUsername());
+        }catch (DiaryAppException e){
+            return e.getMessage();
+        }
+    }
+
+    public String logout(String username){
+        try {
+            diaryService.logout(username);
+            return String.format("%s successfully logged out ",username);
+        }catch (DiaryAppException e){
+            return e.getMessage();
+        }
+    }
+
+    public String getUserDiary(String username){
+        try {
+            diaryService.getUserDiary(username);
+            return String.format("%s's diary successfully found",username);
+        }catch (DiaryAppException e){
+            return e.getMessage();
         }
     }
 
