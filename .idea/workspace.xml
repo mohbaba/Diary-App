@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3386996-0be8-4a18-acb3-c48e7ef6fad7" name="Changes" comment="Added and tested 2 functionalities">
-      <change afterPath="$PROJECT_DIR$/src/dtos/requests/EntryRequest.java" afterDir="false" />
+    <list default="true" id="f3386996-0be8-4a18-acb3-c48e7ef6fad7" name="Changes" comment="Added new Test For Entry Service">
+      <change afterPath="$PROJECT_DIR$/src/controllers/DiaryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/Exceptions/EntryNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Models/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Models/Entry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Repositories/EntryRepositoryImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Repositories/EntryRepositoryImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dtos/requests/EntryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dtos/requests/EntryRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/DiaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/DiaryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/DiaryServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/DiaryServiceImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/EntryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/EntryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/EntryServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/EntryServiceImplementation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/ServicesTests/DiaryServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ServicesTests/DiaryServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,30 +45,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "true",
-    "Repository.Attach.Sources": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "onboarding.tips.debug.path": "C:/Users/DELL/IdeaProjects/DiaryConsoleApp/src/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/DELL/IdeaProjects/DiaryConsoleApp/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="JUnit.DiaryServiceTest.createEntryAndSave_EntryIsCreatedTest">
+}</component>
+  <component name="RunManager" selected="JUnit.DiaryServiceTest.deleteUserWhileLoggedOut_ThrowExceptionTest">
     <configuration name="DiaryServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DiaryConsoleApp" />
       <extension name="coverage">
@@ -77,7 +84,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiaryServiceTest.createEntryAndSave_EntryIsCreatedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DiaryServiceTest.deleteUserWhileLoggedOut_ThrowExceptionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DiaryConsoleApp" />
       <extension name="coverage">
         <pattern>
@@ -87,13 +94,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="ServicesTests" />
       <option name="MAIN_CLASS_NAME" value="ServicesTests.DiaryServiceTest" />
-      <option name="METHOD_NAME" value="createEntryAndSave_EntryIsCreatedTest" />
+      <option name="METHOD_NAME" value="deleteUserWhileLoggedOut_ThrowExceptionTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiaryServiceTest.getUserDiaryWithoutLoggingIn_ThrowsExceptionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DiaryServiceTest.deleteUser_DiaryIsDeletedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DiaryConsoleApp" />
       <extension name="coverage">
         <pattern>
@@ -103,13 +110,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="ServicesTests" />
       <option name="MAIN_CLASS_NAME" value="ServicesTests.DiaryServiceTest" />
-      <option name="METHOD_NAME" value="getUserDiaryWithoutLoggingIn_ThrowsExceptionTest" />
+      <option name="METHOD_NAME" value="deleteUser_DiaryIsDeletedTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiaryServiceTest.logUserInGetUserDiary_ReturnsTheUserDiaryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DiaryServiceTest.findAllEntriesWithDiaryServiceWithoutLogin_throwsExceptionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DiaryConsoleApp" />
       <extension name="coverage">
         <pattern>
@@ -119,13 +126,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="ServicesTests" />
       <option name="MAIN_CLASS_NAME" value="ServicesTests.DiaryServiceTest" />
-      <option name="METHOD_NAME" value="logUserInGetUserDiary_ReturnsTheUserDiaryTest" />
+      <option name="METHOD_NAME" value="findAllEntriesWithDiaryServiceWithoutLogin_throwsExceptionTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiaryServiceTest.logUserInUserISLoggedIn_LogoutUserIsLoggedOutTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DiaryServiceTest.updateExistingEntry_EntryUpdatesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DiaryConsoleApp" />
       <extension name="coverage">
         <pattern>
@@ -135,7 +142,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="ServicesTests" />
       <option name="MAIN_CLASS_NAME" value="ServicesTests.DiaryServiceTest" />
-      <option name="METHOD_NAME" value="logUserInUserISLoggedIn_LogoutUserIsLoggedOutTest" />
+      <option name="METHOD_NAME" value="updateExistingEntry_EntryUpdatesTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -143,11 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DiaryServiceTest.createEntryAndSave_EntryIsCreatedTest" />
+        <item itemvalue="JUnit.DiaryServiceTest.deleteUserWhileLoggedOut_ThrowExceptionTest" />
+        <item itemvalue="JUnit.DiaryServiceTest.deleteUser_DiaryIsDeletedTest" />
+        <item itemvalue="JUnit.DiaryServiceTest.updateExistingEntry_EntryUpdatesTest" />
         <item itemvalue="JUnit.DiaryServiceTest" />
-        <item itemvalue="JUnit.DiaryServiceTest.logUserInGetUserDiary_ReturnsTheUserDiaryTest" />
-        <item itemvalue="JUnit.DiaryServiceTest.logUserInUserISLoggedIn_LogoutUserIsLoggedOutTest" />
-        <item itemvalue="JUnit.DiaryServiceTest.getUserDiaryWithoutLoggingIn_ThrowsExceptionTest" />
+        <item itemvalue="JUnit.DiaryServiceTest.findAllEntriesWithDiaryServiceWithoutLogin_throwsExceptionTest" />
       </list>
     </recent_temporary>
   </component>
@@ -160,7 +167,9 @@
       <option name="presentableId" value="Default" />
       <updated>1710375351074</updated>
       <workItem from="1710375352058" duration="38783000" />
-      <workItem from="1710640313515" duration="20953000" />
+      <workItem from="1710640313515" duration="31212000" />
+      <workItem from="1711025219990" duration="4041000" />
+      <workItem from="1711082482044" duration="13140000" />
     </task>
     <task id="LOCAL-00001" summary="Diary created with layered architecture">
       <option name="closed" value="true" />
@@ -274,7 +283,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710873594203</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added new Test For Entry Service">
+      <option name="closed" value="true" />
+      <created>1710996024393</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1710996024394</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,7 +306,8 @@
     <MESSAGE value="Created Exceptions" />
     <MESSAGE value="Added and tested login functionality" />
     <MESSAGE value="Added and tested 2 functionalities" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added and tested 2 functionalities" />
+    <MESSAGE value="Added new Test For Entry Service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new Test For Entry Service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

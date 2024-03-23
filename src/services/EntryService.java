@@ -7,6 +7,9 @@ import java.util.List;
 public interface EntryService {
     List<Entry> findEntriesByAuthor(String username );
     void addEntry(Entry entry);
-    Entry getEntry(int id);
+    Entry findEntry(int id);
     void deleteEntry(int id);
+    void updateEntry(Entry entry);
+
+    List<Entry> findAll();
 }

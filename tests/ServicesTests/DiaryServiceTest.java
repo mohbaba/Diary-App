@@ -9,10 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import services.DiaryService;
 import services.DiaryServiceImplementation;
-import services.Exceptions.AccountNotFoundException;
-import services.Exceptions.IncorrectPasswordException;
-import services.Exceptions.LoginRequiredException;
-import services.Exceptions.UsernameExistsException;
+import services.Exceptions.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -89,6 +86,7 @@ public class DiaryServiceTest {
         assertThrows(IllegalArgumentException.class,()->diaryService.registerUser(request1));
     }
 
+    @SuppressWarnings("SpellCheckingInspection")
     @Test
     public void registerTwoUsersLogSecondUserIn_SecondUserIsLoggedInTest() {
         RegisterRequest request = new RegisterRequest();
@@ -109,6 +107,7 @@ public class DiaryServiceTest {
 
     }
 
+    @SuppressWarnings("SpellCheckingInspection")
     @Test
     public void registerTwoUsersLogSecondUserInWithCaseSensitiveUsername_SecondUserIsLoggedInTest() {
         RegisterRequest request = new RegisterRequest();
@@ -215,12 +214,188 @@ public class DiaryServiceTest {
         EntryRequest entryRequest = new EntryRequest();
         entryRequest.setTitle("Title");
         entryRequest.setBody("Body");
+        entryRequest.setAuthor(login.getUsername());
         diaryService.createEntry(entryRequest);
         assertEquals(1,diaryService.getEntriesFor("username").size());
         assertEquals("Title",diaryService.getEntriesFor("username").getFirst().getTitle());
 
+    }
+
+    @Test
+    public void createEntryAndSaveWithoutLogin_ThrowExceptionTest(){
+        EntryRequest entryRequest = new EntryRequest();
+        entryRequest.setTitle("Title");
+        entryRequest.setBody("Body");
+        entryRequest.setAuthor("username");
+        assertThrows(LoginRequiredException.class,()->diaryService.createEntry(entryRequest));
 
     }
+
+    @Test
+    public void createTwoEntriesDeleteOne_NumberOfEntriesReduce(){
+        RegisterRequest request = new RegisterRequest();
+
+        request.setUsername("Username");
+        request.setPassword("pass");
+        diaryService.registerUser(request);
+
+        request.setUsername("username2");
+        request.setPassword("pass");
+        diaryService.registerUser(request);
+
+        EntryRequest entryRequest = new EntryRequest();
+        entryRequest.setTitle("Title");
+        entryRequest.setBody("Body");
+        entryRequest.setAuthor("username2");
+        diaryService.createEntry(entryRequest);
+
+        entryRequest.setTitle("Title");
+        entryRequest.setBody("Body");
+        entryRequest.setAuthor("Username");
+        diaryService.createEntry(entryRequest);
+
+        diaryService.deleteEntry(1);
+        assertThrows(EntryNotFoundException.class,
+                ()->diaryService.getEntriesFor("username2").size());
+    }
+
+    @Test
+    public void createTwoEntriesFindSecondEntry_ReturnsActualEntry(){
+        RegisterRequest request = new RegisterRequest();
+
+        request.setUsername("Username");
+        request.setPassword("pass");
+        diaryService.registerUser(request);
+
+        request.setUsername("username2");
+        request.setPassword("pass");
+        diaryService.registerUser(request);
+
+        EntryRequest entryRequest = new EntryRequest();
+        entryRequest.setTitle("Title");
+        entryRequest.setBody("Body");
+        entryRequest.setAuthor("username2");
+        diaryService.createEntry(entryRequest);
+
+        entryRequest.setTitle("Title");
+        entryRequest.setBody("Body");
+        entryRequest.setAuthor("Username");
+        diaryService.createEntry(entryRequest);
+
+        assertEquals(diaryService.getEntriesFor("username2").getFirst(),diaryService.findEntry(1));
+    }
+
+    @Test
+    public void getEntriesByAuthorWithoutLogin_ThrowsExceptionTest(){
+        RegisterRequest request = new RegisterRequest();
+
+        request.setUsername("Username");
+        request.setPassword("pass");
+        diaryService.registerUser(request);
+        diaryService.logout(request.getUsername());
+        assertThrows(LoginRequiredException.class,()->diaryService.getEntriesFor("username"));
+    }
+
+
+    @Test
+    public void findAllEntries_ReturnsTheEntriesInTheRepository(){
+        RegisterRequest request = new RegisterRequest();
+
+        request.setUsername("Username");
+        request.setPassword("pass");
+        diaryService.registerUser(request);
+
+        request.setUsername("username2");
+        request.setPassword("pass");
+        diaryService.registerUser(request);
+
+        EntryRequest entryRequest = new EntryRequest();
+        entryRequest.setTitle("Title");
+        entryRequest.setBody("Body");
+        entryRequest.setAuthor("username2");
+        diaryService.createEntry(entryRequest);
+
+        entryRequest.setTitle("Title");
+        entryRequest.setBody("Body");
+        entryRequest.setAuthor("Username");
+        diaryService.createEntry(entryRequest);
+
+        assertEquals(2,diaryService.findAllEntries().size());
+    }
+
+    @Test
+    public void FindAllEntriesFromEmptyRepository_ThrowsException(){
+        RegisterRequest request = new RegisterRequest();
+
+        request.setUsername("Username");
+        request.setPassword("pass");
+        diaryService.registerUser(request);
+        assertThrows(EntryNotFoundException.class,()->diaryService.findAllEntries());
+    }
+
+    @Test
+    public void findAllEntriesWithDiaryServiceWithoutLogin_throwsExceptionTest(){
+        RegisterRequest request = new RegisterRequest();
+
+        request.setUsername("Username");
+        request.setPassword("pass");
+        diaryService.registerUser(request);
+        diaryService.logout("username");
+        assertThrows(LoginRequiredException.class,()->diaryService.findAllEntries());
+    }
+
+    @Test
+    public void updateExistingEntry_EntryUpdatesTest(){
+        RegisterRequest request = new RegisterRequest();
+
+        request.setUsername("Username");
+        request.setPassword("pass");
+        diaryService.registerUser(request);
+
+        EntryRequest entryRequest = new EntryRequest();
+        entryRequest.setTitle("Title");
+        entryRequest.setBody("Body");
+        entryRequest.setAuthor("Username");
+        diaryService.createEntry(entryRequest);
+        assertEquals("Title",diaryService.getEntriesFor("username").getFirst().getTitle());
+
+        entryRequest.setTitle("New Title");
+        entryRequest.setBody("New Body");
+        entryRequest.setAuthor("username");
+        entryRequest.setId(1);
+        diaryService.updateEntry(entryRequest);
+
+        assertEquals("New Title",diaryService.getEntriesFor("username").getFirst().getTitle());
+
+    }
+
+    @Test
+    public void deleteUser_DiaryIsDeletedTest(){
+        RegisterRequest request = new RegisterRequest();
+
+        request.setUsername("Username");
+        request.setPassword("pass");
+        diaryService.registerUser(request);
+        assertEquals(1,diaryService.getNumberOfUsers());
+
+
+        diaryService.deleteAccount("username");
+        assertEquals(0,diaryService.getNumberOfUsers());
+
+    }
+
+    @Test
+    public void deleteUserWhileLoggedOut_ThrowExceptionTest() {
+        RegisterRequest request = new RegisterRequest();
+
+        request.setUsername("Username");
+        request.setPassword("pass");
+        diaryService.registerUser(request);
+        diaryService.logout("username");
+
+        assertThrows(LoginRequiredException.class, () -> diaryService.deleteAccount("username"));
+    }
+
 
 
 }

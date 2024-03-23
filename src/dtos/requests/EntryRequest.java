@@ -1,6 +1,7 @@
 package dtos.requests;
 
 public class EntryRequest {
+    private int id;
     private String title;
     private String body;
     private String author;
@@ -9,8 +10,16 @@ public class EntryRequest {
         return author;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void setAuthor(String author) {
-        this.author = author;
+        this.author = author.toLowerCase();
     }
 
     public String getTitle() {

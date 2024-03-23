@@ -56,6 +56,7 @@ public class EntryRepositoryImplementation implements EntryRepository{
         for (Entry entry : entries) {
             if (entry.getAuthor().equals(author))authorEntries.add(entry);
         }
+
         return authorEntries;
     }
 

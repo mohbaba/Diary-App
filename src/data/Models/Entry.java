@@ -18,7 +18,6 @@ public class Entry {
     }
 
     public Entry(String title, String body){
-//        this.id = id;
         this.title = title;
         this.body = body;
         this.creationDate = LocalDate.now();
@@ -48,5 +47,9 @@ public class Entry {
 
     public int getId() {
         return this.id;
+    }
+
+    public String toString(){
+        return String.format("%d",id);
     }
 }
