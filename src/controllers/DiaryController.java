@@ -57,4 +57,31 @@ public class DiaryController {
         }
     }
 
+    public String findAllEntriesBy(String username){
+        try {
+            diaryService.getEntriesFor(username);
+            return String.format("%s entries ",username);
+        }catch (DiaryAppException e){
+            return e.getMessage();
+        }
+    }
+
+    public String updateEntry(EntryRequest entryRequest){
+        try {
+            diaryService.updateEntry(entryRequest);
+            return "Entry successfully updated";
+        }catch (DiaryAppException e){
+            return e.getMessage();
+        }
+    }
+
+    public String deleteAccount(String username){
+        try {
+            diaryService.deleteAccount(username);
+            return String.format("%s deleted successfully",username);
+        }catch (DiaryAppException e){
+            return  e.getMessage();
+        }
+    }
+
 }
