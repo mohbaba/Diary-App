@@ -2,6 +2,7 @@ package controllers;
 
 import data.Repositories.DiaryRepository;
 import data.Repositories.DiaryRepositoryImplementation;
+import dtos.requests.EntryRequest;
 import dtos.requests.RegisterRequest;
 import services.DiaryService;
 import services.DiaryServiceImplementation;
@@ -18,4 +19,42 @@ public class DiaryController {
             return e.getMessage();
         }
     }
+
+    public String deleteUser(String username) {
+
+        try {
+            diaryService.deleteAccount(username);
+            return String.format("%s deleted successfully",username);
+        }catch (DiaryAppException e){
+            return e.getMessage();
+        }
+    }
+
+    public String createEntry(EntryRequest entryRequest) {
+        try {
+            diaryService.createEntry(entryRequest);
+            return "Entry created successfully";
+        }catch (DiaryAppException e){
+            return e.getMessage();
+        }
+    }
+
+    public String deleteEntry(int id){
+        try {
+            diaryService.deleteEntry(id);
+            return "Entry deleted successfully";
+        }catch (DiaryAppException e){
+            return e.getMessage();
+        }
+    }
+
+    public String findEntry(int id){
+        try {
+            diaryService.findEntry(id);
+            return "Found Entry";
+        }catch (DiaryAppException e ){
+            return e.getMessage();
+        }
+    }
+
 }
