@@ -22,7 +22,6 @@ public class DiaryController {
     }
 
     public String deleteUser(String username) {
-
         try {
             diaryService.deleteAccount(username);
             return String.format("%s deleted successfully",username);
